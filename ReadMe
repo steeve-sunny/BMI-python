@@ -1,0 +1,5 @@
+This is a simple BMI calculator project
+with a BMI class with a BMI calculator method inside of the class
+
+further improvemnts include reading people info from a csv file and using it against the BMI calculator.
+add a slight UI-user interface 
