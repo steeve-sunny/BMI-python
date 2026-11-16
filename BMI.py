@@ -1,7 +1,8 @@
+import pandas as pd
 
 class BMI(object):
     # initializing our parameters
-    def __init__(self, name, weight, height):
+    def __init__(self, name=None, height=None, weight=None):
         self.name = name
         self.weight = weight
         self.height = height
@@ -24,7 +25,14 @@ class BMI(object):
 
 
 
-#b = BMI("steeve", 55, 1.55)
+#b = BMI("steeve", 1.75, 67.5)
 #print(b.BMI_Calculator())
 
 # read data from a csv file and optimize the project
+df = pd.read_csv("Data.csv")
+
+# feeding in all rows to the BMI calculator at once 
+for index, row in df.iterrows():
+    b = BMI(row["name"], row["height_cm"], row["weight_kg"])
+    print(b.BMI_Calculator())
+   
